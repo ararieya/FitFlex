@@ -47,8 +47,12 @@ function getExercises() {
         exerciseDetails.appendChild(exerciseGif);
     
         const exerciseInfo = document.createElement('p');
-        exerciseInfo.textContent = exercise.additionalInfo; 
+        exerciseInfo.textContent = exercise.additionalInfo; // Replace with actual API property for additional information
         exerciseDetails.appendChild(exerciseInfo);
+    
+        const exerciseInstructions = document.createElement('p');
+        exerciseInstructions.textContent = exercise.instructions; // Replace with actual API property for exercise instructions
+        exerciseDetails.appendChild(exerciseInstructions);
     }
     getExercises();
 
