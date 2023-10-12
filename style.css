@@ -1,0 +1,96 @@
+/* Reset some default styles */
+body, h1, h2, h3, ul, li, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Apply a background image with a sports theme (you can replace this with your own image) */
+  body {
+    background-color: #FFF;
+    background-size: cover;
+  }
+  
+  /* Style the heading elements */
+  h1 {
+    font-size: 36px;
+    color: #FFF; /* White text color */
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #FFA500; /* Orange text color */
+    padding: 10px 0;
+  }
+  
+  h3 {
+    font-size: 20px;
+    color: #000; /* Black text color */
+    margin-bottom: 10px;
+  }
+  
+  /* Style the exercise list */
+  ul#exercise-list {
+    list-style: none;
+    padding: 10px;
+  }
+  
+  ul#exercise-list li {
+    font-size: 26px;
+    color: #FFF;
+    background-color: rgba(32, 147, 255, 0.688); /* Semi-transparent black background */
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  ul#exercise-list li:hover {
+    background-color: #FFA500; /* Darker background on hover */
+  }
+  
+  /* Style the exercise details container */
+  #exercise-details {
+    background: #FFA500; /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    
+  }
+  
+  /* Style the exercise name */
+  #exercise-name {
+    font-size: 24px;
+    color: #000;
+  }
+  
+  /* Style the exercise GIF */
+  #exercise-gif {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+  }
+  
+  /* Style exercise information and instructions */
+  #exercise-info, #exercise-instructions {
+    font-size: 16px;
+    color: #000;
+    margin: 10px 0;
+  }
+  
+  /* Style the "Add Workout" button */
+  #add-workout-btn {
+    background-color: #FFA500; /* Orange background color */
+    color: #FFF; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  #add-workout-btn:hover {
+    background-color: #FF6347; /* Darker orange on hover */
+  }
+  
