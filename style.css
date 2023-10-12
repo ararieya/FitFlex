@@ -91,6 +91,6 @@ body, h1, h2, h3, ul, li, p {
   }
   
   #add-workout-btn:hover {
-    background-color: #FF6347; 
+    background-color: rgba(32, 147, 255, 0.688);
   }
   

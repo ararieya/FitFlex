@@ -37,6 +37,7 @@ function displayExercises(exercises) {
     exerciseList.appendChild(listItem);
   });
 }
+
 function displayExerciseDetails(exercise, exerciseDetails, index) {
     exerciseDetails.innerHTML = "";
   
@@ -74,14 +75,24 @@ function displayExerciseDetails(exercise, exerciseDetails, index) {
 }
 
 function addExerciseToWorkoutPlan(exercise, index, sets, reps, day) {
-  const exerciseToAdd = { ...exercise, sets, reps, day };
-  workoutPlan.push(exerciseToAdd);
-  updateWorkoutPlan();
-  exerciseList.children[index].style.display = "none";
-  saveWorkoutPlanToLocalStorage(); 
-}
-
-function updateWorkoutPlan() {
+    if (!isValidDayOfWeek(day)) {
+      alert("Please enter a valid day of the week (Monday to Sunday).");
+      return;
+    }
+  
+    const exerciseToAdd = { ...exercise, sets, reps, day };
+    workoutPlan.push(exerciseToAdd);
+    updateWorkoutPlanUI();
+    exerciseList.children[index].style.display = "none";
+    saveWorkoutPlanToLocalStorage();
+  }
+  
+  function isValidDayOfWeek(day) {
+    const validDaysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    return validDaysOfWeek.includes(day);
+  }
+  
+function updateWorkoutPlanUI() {
   workoutPlanList.innerHTML = "";
   workoutPlan.forEach((exercise) => {
     const listItem = document.createElement("li");
