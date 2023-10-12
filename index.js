@@ -57,31 +57,39 @@ function displayExerciseDetails(exercise, exerciseDetails, index) {
     const exerciseInstructions = document.createElement("p");
     exerciseInstructions.textContent = exercise.instructions;
     exerciseDetails.appendChild(exerciseInstructions);
+
     const addToWorkoutBtn = document.createElement("button");
-    addToWorkoutBtn.textContent = "Add to Workout Plan";
-    addToWorkoutBtn.classList.add("btn", "btn-primary");
-    addToWorkoutBtn.addEventListener("click", () => {
-      addExerciseToWorkoutPlan(exercise, index);
-    });
-    exerciseDetails.appendChild(addToWorkoutBtn);
-  }
+ addToWorkoutBtn.textContent = "Add to Workout Plan";
+  addToWorkoutBtn.classList.add("btn", "btn-primary");
+  addToWorkoutBtn.addEventListener("click", () => {
+    const sets = prompt("Enter the number of sets:");
+    const reps = prompt("Enter the number of reps:");
+    const day = prompt("Enter the day for the workout:");
 
+    if (sets !== null && reps !== null && day !== null) {
+      addExerciseToWorkoutPlan(exercise, index, sets, reps, day);
+    }
+  });
+  exerciseDetails.appendChild(addToWorkoutBtn);
+}
 
-function addExerciseToWorkoutPlan(exerciseDetails, index) {
-    workoutPlan.push(exerciseDetails);
-    updateWorkoutPlanUI();
-    exerciseList.children[index].style.display = "none"; // Hide the added exercise in the list
-  }
-  
-  function updateWorkoutPlanUI() {
-    workoutPlanList.innerHTML = "";
-    workoutPlan.forEach((exercise) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = exercise.name;
-      listItem.classList.add("list-group-item");
-      workoutPlanList.appendChild(listItem);
-    });
-  }
+function addExerciseToWorkoutPlan(exercise, index, sets, reps, day) {
+  const exerciseToAdd = { ...exercise, sets, reps, day };
+  workoutPlan.push(exerciseToAdd);
+  updateWorkoutPlan();
+  exerciseList.children[index].style.display = "none";
+  saveWorkoutPlanToLocalStorage(); 
+}
+
+function updateWorkoutPlan() {
+  workoutPlanList.innerHTML = "";
+  workoutPlan.forEach((exercise) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `<strong>${exercise.name}</strong> - Sets: ${exercise.sets}, Reps: ${exercise.reps}, Day: ${exercise.day}`;
+    listItem.classList.add("list-group-item");
+    workoutPlanList.appendChild(listItem);
+  });
+}
   
   clearWorkoutBtn.addEventListener("click", () => {
     workoutPlanList.innerHTML = "";
@@ -91,5 +99,6 @@ function addExerciseToWorkoutPlan(exerciseDetails, index) {
     workoutPlan.length = 0; 
   });
 
+  
 getExercises();
 

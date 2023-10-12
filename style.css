@@ -1,36 +1,36 @@
-/* Reset some default styles */
+
 body, h1, h2, h3, ul, li, p {
     margin: 0;
     padding: 0;
   }
   
-  /* Apply a background image with a sports theme (you can replace this with your own image) */
+
   body {
-    background-color: #FFF;
+    background-image: url(./background-image.jpeg);
     background-size: cover;
   }
   
-  /* Style the heading elements */
+
   h1 {
     font-size: 36px;
-    color: #FFF; /* White text color */
+    color: #ffffff; 
     text-align: center;
     padding: 20px 0;
   }
   
   h2 {
     font-size: 24px;
-    color: #FFA500; /* Orange text color */
+    color: #FFA500; 
     padding: 10px 0;
   }
   
   h3 {
     font-size: 20px;
-    color: #000; /* Black text color */
+    color: #ffffff; 
     margin-bottom: 10px;
   }
   
-  /* Style the exercise list */
+
   ul#exercise-list {
     list-style: none;
     padding: 10px;
@@ -39,7 +39,7 @@ body, h1, h2, h3, ul, li, p {
   ul#exercise-list li {
     font-size: 26px;
     color: #FFF;
-    background-color: rgba(32, 147, 255, 0.688); /* Semi-transparent black background */
+    background-color: rgba(32, 147, 255, 0.688); 
     padding: 5px;
     margin: 5px;
     cursor: pointer;
@@ -47,41 +47,41 @@ body, h1, h2, h3, ul, li, p {
   }
   
   ul#exercise-list li:hover {
-    background-color: #FFA500; /* Darker background on hover */
+    background-color: #FFA500; 
   }
   
-  /* Style the exercise details container */
+
   #exercise-details {
-    background: #FFA500; /* Semi-transparent white background */
+    background: #FFA500; 
     padding: 20px;
     border-radius: 10px;
     
   }
   
-  /* Style the exercise name */
+
   #exercise-name {
     font-size: 24px;
-    color: #000;
+    color: #ffffff;
   }
   
-  /* Style the exercise GIF */
+
   #exercise-gif {
     display: block;
     margin: 20px auto;
     max-width: 100%;
   }
   
-  /* Style exercise information and instructions */
+
   #exercise-info, #exercise-instructions {
     font-size: 16px;
-    color: #000;
+    color: rgb(255, 255, 255)040;
     margin: 10px 0;
   }
   
-  /* Style the "Add Workout" button */
+ 
   #add-workout-btn {
-    background-color: #FFA500; /* Orange background color */
-    color: #FFF; /* White text color */
+    background-color: #FFA500; 
+    color: #FFF;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
@@ -91,6 +91,6 @@ body, h1, h2, h3, ul, li, p {
   }
   
   #add-workout-btn:hover {
-    background-color: #FF6347; /* Darker orange on hover */
+    background-color: #FF6347; 
   }
   
